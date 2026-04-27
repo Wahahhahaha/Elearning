@@ -1,23 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#E0F7FA">
 
-    <WebView
-        android:id="@+id/webView"
+    <ImageView
+        android:id="@+id/wave_header"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="220dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/wave_bg"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
+    <View
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="100dp"
+        android:alpha="0.4"
+        android:background="@android:drawable/presence_online"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/login_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:visibility="gone"/>
+        android:layout_marginHorizontal="30dp"
+        android:background="@drawable/card_soft_white"
+        android:elevation="8dp"
+        android:orientation="vertical"
+        android:padding="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:text="EXAM LOGIN"
+            android:textColor="#0277BD"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/edittext_rounded"
+            android:drawableStart="@android:drawable/ic_menu_edit"
+            android:drawablePadding="10dp"
+            android:hint="Exam Code"
+            android:paddingHorizontal="15dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/edittext_rounded"
+            android:drawableStart="@android:drawable/ic_menu_myplaces"
+            android:drawablePadding="10dp"
+            android:hint="NIS Number"
+            android:inputType="number"
+            android:paddingHorizontal="15dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:backgroundTint="#0288D1"
+            android:text="Dive In"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:cornerRadius="15dp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="-20dp"
+        android:layout_marginEnd="-10dp"
+        android:alpha="0.6"
+        android:rotation="-15"
+        android:src="@android:drawable/ic_menu_compass"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="#B3E5FC" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
